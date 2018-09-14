@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Filmes</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sobre_o_filme">Sobre o Filme</string>
+    <string name="titulo">Título</string>
+    <string name="sinopse">Sínopse</string>
+    <string name="lorem_ipsum">Lorem ipsum ullamcorper non facilisis fringilla ad augue curabitur tempor commodo, dui molestie accumsan elementum fringilla ornare a nullam consectetur fames, sociosqu in tristique ac mi leo blandit vitae class. curabitur et nunc luctus, vivamus enim ipsum amet, non mattis.</string>
+    <string name="format_date">dd/mm/yyyy</string>
+    <string name="release_date">Data de Lançamento</string>
+    <string name="genre">Gênero</string>
+    <string name="ops_n_o_foi_poss_vel_exibir_os_filmes_por_favor_tente_novamente">Ops! Não foi possível exibir os filmes. Por favor, tente novamente.</string>
+    <string name="tentar_novamente">Tentar Novamente</string>
+</resources>
