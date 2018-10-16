@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="br.com.filmes.util.DateFormatUtil" />
+
+        <variable
+            name="movie"
+            type="br.com.filmes.model.entity.Movie" />
+
+        <variable
+            name="listener"
+            type="br.com.filmes.model.interfaces.commons.ClickListener" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{(v) -> listener.clickListener(movie)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:background="#482323">
+
+                <ImageView
+                    android:id="@+id/ivPoster"
+                    android:layout_width="105dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_movies"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    bind:imageUrl='@{movie.posterPath == null ? "" : movie.posterPath}'
+                    android:contentDescription="@{movie.title}" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#8888"
+                    android:padding="5dp"
+                    android:text="@{DateFormatUtil.dateFormat(movie.releaseDate)}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="30/08/2018" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="12"
+                    android:text="@{movie.title}"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPoster"
+                    tools:text="@string/titulo" />
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
